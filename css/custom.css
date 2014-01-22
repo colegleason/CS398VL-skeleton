@@ -1,0 +1,11 @@
+body {
+  padding-top: 50px;
+}
+.greeting {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#content: {
+    margin:auto;
+}
