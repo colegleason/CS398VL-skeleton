@@ -12,15 +12,19 @@ Publishing
 ----------
 You have several options for hosting your project. 
 
-### CS Servers
+### Engineering@Illinois Servers
 You can run the syncing script by typing `./sync.sh`, It will prompt you for some info. You may leave the hostname and destination folder as-is, but make sure your username is your Netid!
 
 If you choose to, you can have the script save these values in a file called `.config`. To change the values later you can either edit that file or delete it and run the script again.
+
+You may then access the site at http://web.engr.illinois.edu/~NETID/.
 
 ### Github Pages
 This one is easy! You just need to create a `gh-pages` branch and Github will use that for hosting your site. Since you don't really need the `gh-pages branch` locally, you can use the following command to push master to gh-pages. This assumes origin is your fork, not the main repository.
 
     git push origin master:gh-pages
+    
+You can then access the site (after a short delay) at http://github.io/USERNAME/REPOSITORY_NAME
 
 ### Amazon Web Services
 Coming soon!
