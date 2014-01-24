@@ -24,7 +24,9 @@ This one is easy! You just need to create a `gh-pages` branch and Github will us
 
     git push origin master:gh-pages
     
-You can then access the site (after a short delay) at http://github.io/USERNAME/REPOSITORY_NAME
+Note that this will make all of the files available on the website, not just HTML and the like. This is in contrast to the Illinois server above.
+
+You can then access the site (after a short delay) at http://USERNAME.github.io/REPOSITORY_NAME
 
 ### Amazon Web Services
 Coming soon!
