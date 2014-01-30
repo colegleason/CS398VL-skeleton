@@ -6,9 +6,9 @@ function main() {
 
 }
 function histogram(id, data) {
-    // Magic numbers (maybe should be in CSS!)
-    var width = 800;
-    var height = 200;
+    // Get size of container and set some defaults.
+    var width = $(id).width() || 900;
+    var height = $(id).height() || 200;
 
     // A few colors to mess with
     var color = d3.scale.category10();
