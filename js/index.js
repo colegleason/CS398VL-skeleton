@@ -1,6 +1,6 @@
 function main() {
     console.log("JS file loaded!");
-    d3.json('/data/cindas_data.json', function(data) {
+    d3.json('data/cindas_data.json', function(data) {
         histogram("#main", data);
     });
 
