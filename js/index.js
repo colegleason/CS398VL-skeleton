@@ -31,33 +31,33 @@ function favoriteBars(id, data)
         var width = 450,
             height = 500,
             radius = Math.min(width, height) / 2;
-    <!-- This creates a set of 10 colors to use -->
+        <!-- This creates a set of 10 colors to use -->
         var color = d3.scale.category10();
-    <!-- Pie Chart setup -->
-    var arc = d3.svg.arc()
-            .outerRadius(radius - 10)
-            .innerRadius(0);
+        <!-- Pie Chart setup -->
+        var arc = d3.svg.arc()
+                .outerRadius(radius - 10)
+                .innerRadius(0);
     var pie = d3.layout.pie()
             .value(function(d) { return d.love; });
-    <!-- Add a chart SVG element to the DOM -->
-    var svg = d3.select(id).append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-    <!-- This creates arcs for each of the pie slices. -->
-    var g = svg.selectAll(".arc")
-            .data(pie(data))
-            .enter().append("g")
-            .attr("class", "arc");
+        <!-- Add a chart SVG element to the DOM -->
+        var svg = d3.select(id).append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        <!-- This creates arcs for each of the pie slices. -->
+        var g = svg.selectAll(".arc")
+                .data(pie(data))
+                .enter().append("g")
+                .attr("class", "arc");
 
-    <!-- Now we fill the arc with a color -->
-    g.append("path")
+        <!-- Now we fill the arc with a color -->
+        g.append("path")
         .attr("d", arc)
         .style("fill", function(d, i) { return color(i); })
         .attr('title', function(d) { return d.name;});
-    <!-- And add labels! -->
-    g.append("text")
+        <!-- And add labels! -->
+        g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .style("text-anchor", "middle")
         .style("fill", "white")
@@ -86,9 +86,9 @@ function favoritePies(id, data) {
             .range([0, height]);
 
     var g = svg.selectAll("rect")
-        .data(data)
-        .enter()
-        .append("g");
+            .data(data)
+            .enter()
+            .append("g");
     g.append("rect")
         .attr("x", function(d, i) { return x(i);})
         .attr("y", function(d) {return height - y(d.love) - 25;})
