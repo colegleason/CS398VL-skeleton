@@ -1,6 +1,9 @@
 function main() {
     console.log("JS file loaded!");
     d3.json('data/cindas_data.json', function(data) {
+        data = _.map(data, function(elem) {
+            return {name: elem.word, value: elem.freq};
+        });
         histogram("#main", data);
     });
 
