@@ -24,7 +24,11 @@ if [ -z "$changed" ]; then
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        echo "remote_host=$remote_host\nremote_user=$remote_user\nremote_dest=\"$remote_dest\"\n" > ".config"
+        cat << EOF > .config
+remote_host=$remote_host
+remote_user=$remote_user
+remote_dest="$remote_dest"
+EOF
     fi
 fi
 echo "Copying files to $remote_host with username $remote_user at directory $remote_dest."
